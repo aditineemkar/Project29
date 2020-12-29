@@ -6,7 +6,9 @@ class Box{
           //'density':1.0
       }
       this.body = Bodies.rectangle(x, y, width, height, options);
+      this.image = loadImage("y.png");
       this.width = width;
+
       this.height = height;
       World.add(world, this.body);
     }
@@ -16,8 +18,8 @@ class Box{
       push();
       translate(pos.x,pos.y);
       rotate(angle);
-      rectMode(CENTER);
-      rect(0,0,this.width,this.height)
+      imageMode(CENTER);
+      image(this.image,0,0,this.width,this.height)
       pop();
     }
 }
